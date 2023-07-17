@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    border: 1px solid red;
+    min-width: 10px;
+    min-height: 10px;
+}
+
+.container{
+    
+}
