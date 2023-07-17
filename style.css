@@ -2,11 +2,71 @@
     margin: 0;
     padding: 0;
 
-    border: 1px solid red;
-    min-width: 10px;
-    min-height: 10px;
+}
+:root {
+
+    --distanziali:22vh;
+    --bs-btn-hover-color:white;
 }
 
-.container{
-    
+/*************** classsi utility ******************/
+.relative{
+    position: relative;
 }
+
+.absolute{
+    position: absolute;
+}
+
+/*************** classsi utility ******************/
+
+.spacers{ /* distanziali top e bot */
+    height: var(--distanziali);
+}
+
+.col-10, .col-2{ /*altezza carosello*/
+    height: calc(100vh - (var(--distanziali) * 2));
+}
+
+.selettore{
+    height: calc(100% / 5);
+    background-size: cover;
+    background-position-y: center;
+}
+
+/************************* bottoni **************************/
+.go-top, .go-down{
+    transform: translateX(-50%);
+    left: 50%;
+    color: grey;
+    font-size: 2rem;
+}
+
+.go-down{
+   bottom: 0;
+}
+/************************* bottoni **************************/
+
+/********descrizione cartolina principale********/
+.container-descrizione{
+    bottom: 0;
+    width: 100%;
+    color: white;
+    justify-content: right;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.163) , rgb(0, 0, 0));
+    padding: 0.5rem 1rem;
+}
+.descrizione{
+    flex-direction: column;
+    display: flex;
+    text-align: right;
+    width: 60%;
+    align-items: end;
+}
+
+#cartolina{
+    height: 100%;
+    background-position-y: center;
+    background-size: cover;
+}
+

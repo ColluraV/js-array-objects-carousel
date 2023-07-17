@@ -13,17 +13,42 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="d-flex flex-column">
+    
+    <div class="spacers"></div>
+    
     <div class="container">
-        <div class="raw d-flex">
-            <div class="col-10">
-                
+        
+        <div class="raw d-flex">        
+            <div class="col-10 relative">    <!--cartolina-->
+
+                <div id="cartolina"></div>
+
+                                            <!--descrizione in absolute-->
+                <div class="container-descrizione absolute d-flex">
+                    <div class="descrizione"></div>
+                </div>
+
             </div>
 
-            <div class="col-2"></div>
+            
+            <div class="col-2 d-flex flex-column relative">     <!--nav selettore-->
+                <div style="background-image: url(imgs/01.webp);" class="selettore"></div>
+                <div style="background-image: url(imgs/02.webp);" class="selettore"></div>
+                <div style="background-image: url(imgs/03.webp);" class="selettore"></div>
+                <div style="background-image: url(imgs/04.webp);" class="selettore"></div>
+                <div style="background-image: url(imgs/05.webp);" class="selettore"></div>
+
+                <div type="button" class="btn absolute go-top"><i class="fa-solid fa-circle-chevron-up"></i></div>
+                <div type="button" class="btn absolute go-down"><i class="fa-solid fa-circle-chevron-down"></i></div>
+            </div>
+        
         </div>
+
+
     </div>
 
+    <div class="spacers"></div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
