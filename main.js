@@ -2,6 +2,7 @@
 
 const MainCard = document.querySelector("#cartolina");
 const descrizione = document.querySelector(".descrizione");
+const rightSelector = document.querySelector(".right-selector");
 
 const TopBtn = document.querySelector(".go-top");
 const DownBtn = document.querySelector(".go-down");
@@ -32,6 +33,14 @@ const images = [
     }
 ];
 
+images.forEach ((singolaIMG) => {
+    const div = document.createElement("div");
+    console.log(`${singolaIMG.title}`, `${singolaIMG.image}`);
+    div.style.backgroundImage = `url('${singolaIMG["image"]}')`;
+    div.classList.add("selettore");
+ 
+    rightSelector.append(div);
+});
 
 let nowImg = images[parseInt(variableSelector)]
 
