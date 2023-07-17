@@ -32,13 +32,15 @@
     height: calc(100% / 5);
     background-size: cover;
     background-position-y: center;
+
+
 }
 
 /************************* bottoni **************************/
 .go-top, .go-down{
     transform: translateX(-50%);
     left: 50%;
-    color: grey;
+    color: rgb(255, 213, 0);
     font-size: 2rem;
 }
 
@@ -53,7 +55,7 @@
     width: 100%;
     color: white;
     justify-content: right;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.163) , rgb(0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) , rgb(0, 0, 0));
     padding: 0.5rem 1rem;
 }
 .descrizione{
@@ -70,3 +72,17 @@
     background-size: cover;
 }
 
+.active{
+
+    opacity: 0.5;
+
+
+}
+body{
+    background-image: url(https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg);
+    background-size: cover;
+}
+
+.raw.d-flex{
+    background-color: black;
+}

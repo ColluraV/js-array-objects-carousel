@@ -7,6 +7,7 @@ const rightSelector = document.querySelector(".right-selector");
 const TopBtn = document.querySelector(".go-top");
 const DownBtn = document.querySelector(".go-down");
 
+let contatore = 0;
 let variableSelector = 0;
 
 const images = [
@@ -33,66 +34,108 @@ const images = [
     }
 ];
 
-images.forEach ((singolaIMG) => {
+//creazione singoli elementi lista destra +append
+
+images.forEach((singolaIMG) => {
     const div = document.createElement("div");
+    contatore ++;
     console.log(`${singolaIMG.title}`, `${singolaIMG.image}`);
     div.style.backgroundImage = `url('${singolaIMG["image"]}')`;
     div.classList.add("selettore");
- 
+    div.addEventListener("click", casellaClick);
+    div.dataset.numero = parseInt(contatore - 1);
+    console.log(contatore);
     rightSelector.append(div);
+    
+
 });
+
+
+//variabile card attuale
 
 let nowImg = images[parseInt(variableSelector)]
 
-
-MainCard.style.backgroundImage = `url('${nowImg["image"]}')`;
-descrizione.innerHTML=(`<h5>${nowImg["title"]}</h5> 
-                            <p> ${nowImg["text"]}</p>`);
+nowImg = printHtml();
 
 
-TopBtn.addEventListener("click", function(){
 
-    variableSelector -= 1;
-    
+//bottone img sopra
+
+
+TopBtn.addEventListener("click", function () {
+
+    variableSelector --;
+
     if (variableSelector < 0) {
 
         variableSelector = 4;
-        
+
     }
     console.log(variableSelector);
-    console.log(nowImg);
-    
-    nowImg = images[(variableSelector)]
 
-    MainCard.style.backgroundImage = `url('${nowImg["image"]}')`;
-    descrizione.innerHTML=(`<h5>${nowImg["title"]}</h5> 
-                                <p> ${nowImg["text"]}</p>`)
+
+    nowImg = printHtml();
 })
 
 
-DownBtn.addEventListener("click", function(){
-    
-    variableSelector += 1;
+//bottone img sotto
+
+
+DownBtn.addEventListener("click", function () {
+
+    variableSelector ++;
 
     if (variableSelector > 4) {
 
         variableSelector = 0;
+
     }
     console.log(variableSelector);
-    console.log(nowImg);
 
-    nowImg = images[(variableSelector)]
 
-    MainCard.style.backgroundImage = `url('${nowImg["image"]}')`;
-    
-    descrizione.innerHTML=(`<h5>${nowImg["title"]}</h5> 
-                                <p> ${nowImg["text"]}</p>`)
-    
+
+    printHtml();
 })
 
 
+//funzione click barra destra
+
+
+function casellaClick() {
+
+    variableSelector = this.dataset.numero;
+
+    printHtml();
+
+    console.log(variableSelector);
+
+}
+
+
+// Funzione stampa su HTML
+
+function printHtml(){
+    nowImg = images[(variableSelector)]
+    console.log(nowImg);
+    MainCard.style.backgroundImage = `url('${nowImg["image"]}')`;
+    descrizione.innerHTML = (`<h5>${nowImg["title"]}</h5> 
+                                <p> ${nowImg["text"]}</p>`)
+}
 
 
 
+setInterval(function(){
+    variableSelector++;
 
+    if (variableSelector > 4){
+        variableSelector = 0;
+    }
+    printHtml();
+    console.log (variableSelector);
 
+  }, 4500);
+
+  const imageList = document.querySelectorAll( ".right-selector" );
+  imageList[variableSelector].classList.add("active");
+
+ 
